@@ -1,13 +1,12 @@
-package IDEAL;
-
-import junit.framework.TestCase;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Test;
 
 /**
  * Created by jelliott on 9/17/2015.
  */
+package Java.IDEAL;
+import junit.framework.TestCase;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Test;
 public class NameGeneratorTest extends TestCase {
 
     @After
