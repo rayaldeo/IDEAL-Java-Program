@@ -388,7 +388,7 @@ public class IdealTerminal implements Runnable {
                     chancesOfLife();
                 }
 
-                System.out.println("Turn: " + age + "\n" + "|" + family.getFamilyWealth() + "|" + "|" + countries.getName() + "|" + "|" + countries.getTaxes());
+                System.out.println("Turn: " + age + "\n" +"|Family" +"|" + family.getFamilyWealth() + "|" + "|" + countries.getName() + "|" + "|" + countries.getTaxes());
                 updatingStateOfHuman(job, looks, worshippers, friends, professionAssocites, influence);
                 FamilyDetails();
                 System.out.println("\n" + "/--------------------------------------------------------------------------------------/");
@@ -438,7 +438,7 @@ public class IdealTerminal implements Runnable {
                 chancesOfLife();
             }
 
-                System.out.println("Turn: " + age + "\n" + "|" + human.getOverAllWealth() + "|" + "|" + countries.getName() + "|" + "|" + countries.getTaxes());
+                System.out.println("Turn: " + age + "\n" +"|Human" +"|" + human.getOverAllWealth() + "|" + "|" + countries.getName() + "|" + "|" + countries.getTaxes());
                 this.worshippersFollow(worshippersFollow);
                 updatingStateOfHuman(job, looks, worshippers, friends, professionAssocites, influence);
                 CharDetails();
@@ -840,7 +840,7 @@ public class IdealTerminal implements Runnable {
                             break;
                     }
 
-                }  else if(age>20) {
+                }  else  {
                     //The Human will be old enough to move into his own country..So use getter from human
                     if (countries == Countries.Itican ||
                             countries == Countries.Itican ||
@@ -1066,8 +1066,10 @@ public class IdealTerminal implements Runnable {
                 System.out.println("Go a school:Raises the amount of professional Associates" + "\n" +
                         "Unlocks jobs" + "\n" +
                         "Raises the amount of friends");
+                human.setOverAllwealth(human.getWealthDoubleValue()-2500*countries.getMultiplier());
+                System.out.println("You got charged:$"+2500*countries.getMultiplier());
                          schoolAttendanceAmount++;
-                if (human.getWealthDoubleValue() >= 1 || human.getInfluence() >= 1 && schoolAttendanceAmount>1) {
+                if (human.getWealthDoubleValue() >= 1 && human.getInfluence() >= 1 && schoolAttendanceAmount>0) {
                     if (!begger) {
                         begger = true;
                         System.out.println("You have unlocked the Begger Job");
@@ -1076,7 +1078,7 @@ public class IdealTerminal implements Runnable {
                         vagrant = true;
                         System.out.println("You have unlocked the Vagrant Job");
                     }
-                }if(human.getWealthDoubleValue()>=1000 || human.getInfluence()>=2000 && schoolAttendanceAmount>4){
+                }if(human.getWealthDoubleValue()>=10000 && human.getInfluence()>=20000 && schoolAttendanceAmount>4){
                     if(!intern){
                         intern=true;
                         System.out.println("You have unlocked the Intern Job");
@@ -1087,7 +1089,7 @@ public class IdealTerminal implements Runnable {
                         firefighter=true;
                         System.out.println("You have unlocked the Firefighter Job");
                 }
-            }if(human.getWealthDoubleValue()>=7000 || human.getInfluence()>=10000 && schoolAttendanceAmount>8){
+            }if(human.getWealthDoubleValue()>=70000 && human.getInfluence()>=100000 && schoolAttendanceAmount>8){
                 if(!banker){
                     banker=true;
                     System.out.println("You have unlocked the Banker Job");
@@ -1101,14 +1103,14 @@ public class IdealTerminal implements Runnable {
                     firefighter=true;
                     System.out.println("You have unlocked the Firefighter Job");
                 }
-            }if(human.getWealthDoubleValue()>=100000 || human.getInfluence()>=10000 && human.getFriends()>10000 || schoolAttendanceAmount>15){
+            }if(human.getWealthDoubleValue()>=1000000 && human.getInfluence()>=100000 && human.getFriends()>10000 && schoolAttendanceAmount>15){
                 if(!sultan){
                     sultan=true;
                     System.out.println("You have unlocked the Sultan Job");
 
                 }
 
-            }if(human.getWealthDoubleValue()>=1000000 || human.getInfluence()>=1000000 && human.getFriends()>10000 || human.getWorshippers()>1000 &&  schoolAttendanceAmount>20) {
+            }if(human.getWealthDoubleValue()>=10000000 && human.getInfluence()>=10000000 && human.getFriends()>100000 && human.getWorshippers()>10000 &&  schoolAttendanceAmount>20) {
                 if (!god) {
                     god = true;
                     System.out.println("You have unlocked the God Job");
