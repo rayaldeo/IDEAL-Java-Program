@@ -446,7 +446,7 @@ public class IdealTerminal implements Runnable {
                 age++;
 
 
-        }while(human.getWealthDoubleValue()< 1000000 && human.getInfluence()<100000);
+        }while(human.getWealthDoubleValue()< 20000000 && human.getInfluence()<2000000);
 
 
 
@@ -454,7 +454,7 @@ public class IdealTerminal implements Runnable {
 
     //If 'worshippersFollow' is true then the user will gain  100 worshippers for 10 turns.I am proud of this piece of code!!
     private void worshippersFollow(boolean worshippersFollow) {
-        if(worshippersFollow) {
+        if(worshippersFollow && age !=age+10) {
 
                 human.setWorshippers(human.getWorshippers()+100);
                 System.out.println("You attracted 100 worshippers");
@@ -842,7 +842,7 @@ public class IdealTerminal implements Runnable {
 
                 }  else  {
                     //The Human will be old enough to move into his own country..So use getter from human
-                    if (countries == Countries.Itican ||
+                    if (countries == Countries.Irada ||
                             countries == Countries.Itican ||
                             countries == Countries.Albaq) {
                         System.out.println("\n You can only choose jobs that you have access to"
