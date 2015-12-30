@@ -11,7 +11,7 @@ public class IdealTerminal implements Runnable {
     private Jobs job=Jobs.NOJOB;
     private NameGenerator name,nameOfChar;
     //private Neighborhood neighborhood;
-    private int age, schoolAttendanceAmount;;
+    private int age, schoolAttendanceAmount;
     private int value,looks=0,worshippers=0,friends=0,professionAssocites=0,influence=0;
     private Boolean booolean,banker=false,independent=false,buisnessowner=false,king=false,intern=false,male;
     private Family family;
@@ -377,7 +377,7 @@ public class IdealTerminal implements Runnable {
 
 
                 randomNum = rand.nextInt((30 - 1) + 1);
-                System.out.println(randomNum);
+                //System.out.println(randomNum);
                 if (randomNum <= 14) {
                     chancesOfLife();
                 }
@@ -433,7 +433,7 @@ public class IdealTerminal implements Runnable {
 
                 }
             randomNum = rand.nextInt((30 - 1) + 1);
-            System.out.println(randomNum);
+            //System.out.println(randomNum);
             if (randomNum <= 14) {
                 chancesOfLife();
             }
@@ -514,7 +514,7 @@ public class IdealTerminal implements Runnable {
     public void FinalInit(){
         System.out.println("\n");
         System.out.println("Finishing up the Final Touches on your new Character");
-        human = new Human(nameOfChar.getWholeName(),job.NOJOB,family,countries);
+        human = new Human(nameOfChar.getWholeName(), Jobs.NOJOB,family,countries);
 
 
     }
@@ -564,7 +564,7 @@ public class IdealTerminal implements Runnable {
                     break;
                 case 2:
 
-                    System.out.println("2");
+                    //System.out.println("2");
                     if (human.getFriends() > 1000 || human.getFriends() + family.getFamilyFriends() > 1000) {
                         System.out.println("Your family is Famous and this allows you to earn $500");
                         human.setWealth(human.getWealthDoubleValue() + 500);
@@ -583,7 +583,7 @@ public class IdealTerminal implements Runnable {
                     break;
                 case 3:
 
-                    System.out.println("3");
+                    //System.out.println("3");
                     if (human.getInfluence() > 100000 || human.getInfluence() + family.getFamilyInfluence() > 100000) {
                         System.out.println("Your family has a high influence level and is able to get you to the best schools and mentors" + "\n" + "You have will have access to the intern job "
                                 + "\n" + "You have will have access to the Banker job "
@@ -600,7 +600,7 @@ public class IdealTerminal implements Runnable {
                     break;
                 case 4:
 
-                    System.out.println("4");
+                    //System.out.println("4");
                     if (human.getFriends() > 100000 || human.getFriends() + family.getFamilyFriends() > 100000) {
                         System.out.println("Having many friends make ways for more friends.You gained 500 friends");
                         human.setFriends(human.getFriends() + 500);
@@ -614,7 +614,7 @@ public class IdealTerminal implements Runnable {
                     break;
                 case 5:
 
-                    System.out.println("5");
+                    //System.out.println("5");
                     System.out.println("A storm came over and destroyed you car.You lose some of your money in the process of replacing it");
                     human.setOverAllwealth(human.getWealthDoubleValue() -1000);
                     System.out.println("You got charged:1000");
@@ -622,7 +622,7 @@ public class IdealTerminal implements Runnable {
 
                     break;
                 case 6:
-                    System.out.println("6");
+                    //System.out.println("6");
 
                     if (human.getLooks() > 1 && human.getLooks() < 5) {
                         System.out.println("You are not very good looking and people do not resonate with you very well.What a shallow world where people judge based on your looks \n You gain nothing");
@@ -650,7 +650,7 @@ public class IdealTerminal implements Runnable {
                     CharDetails();
                     break;
                 case 7:
-                    System.out.println("7");
+                    //System.out.println("7");
                     if(age>20) {
                         System.out.println("You inherited Godly talent begin to attract worshippers");
                         worshippersFollow = true;
@@ -663,7 +663,7 @@ public class IdealTerminal implements Runnable {
 
                 case 8:
 
-                    System.out.println("8");
+                    //System.out.println("8");
                     if(age>20) {
                         if (god) {
                             System.out.println("You have surpass the earthly domain and is ready to create your own heaven");
@@ -677,7 +677,7 @@ public class IdealTerminal implements Runnable {
                     break;
 
                 case 9:
-                    System.out.println("9");
+                    //System.out.println("9");
                     System.out.println("You won the lottery so you will gain $500000");
                     human.setOverAllwealth(human.getWealthDoubleValue() + 500000);
                     System.out.println(human.getOverAllWealth());
@@ -686,7 +686,7 @@ public class IdealTerminal implements Runnable {
 
 
                 case 10:
-                    System.out.println("10");
+                    //System.out.println("10");
                     System.out.println("Your recent trip to IDEAL Center of Academics added professional Associates to call onto later in life");
                     human.setProfessionalAssociates(human.getProfessionalAssociates()+500);
                     CharDetails();
@@ -696,7 +696,7 @@ public class IdealTerminal implements Runnable {
 
                 case 11:
 
-                    System.out.println("11");
+                    //System.out.println("11");
                     System.out.println("You get a boost in influence, wealth, and friends!You are very lucky");
                     human.setOverAllwealth(human.getWealthDoubleValue() + 500000);
                     human.setFriends(human.getFriends()+50000);
@@ -707,7 +707,7 @@ public class IdealTerminal implements Runnable {
 
                 case 12:
 
-                    System.out.println("12");
+                    //System.out.println("12");
                     System.out.println("You get a boost in professional associates, looks, and worshippers !You are very lucky");
                     human.setProfessionalAssociates(human.getProfessionalAssociates() + 5000);
                     human.setLooks(human.getLooks()+2);
@@ -718,7 +718,7 @@ public class IdealTerminal implements Runnable {
 
                 case 13:
 
-                    System.out.println("13");
+                    //System.out.println("13");
                     System.out.println("You lose in  influence, wealth, and friends!You are very unlucky");
                     human.setOverAllwealth(human.getWealthDoubleValue() - 5000);
                     human.setFriends(human.getFriends()-500);
@@ -729,7 +729,7 @@ public class IdealTerminal implements Runnable {
 
                 case 14:
 
-                    System.out.println("14");
+                   // System.out.println("14");
                     System.out.println("You lose in professional associates, looks, and worshippers !You are very lucky");
                     human.setProfessionalAssociates(human.getProfessionalAssociates() -500);
                     human.setLooks(human.getLooks()-2);
@@ -796,7 +796,7 @@ public class IdealTerminal implements Runnable {
         System.out.println("\n");
 
         System.out.println("(1)Get a job" + ("\n") +
-                "(2)Go to school" + ("\n") +
+                "(2)Go to school" +" School Attendance:"+schoolAttendanceAmount+ ("\n") +
                 "(3)Work on your physical Appearance" + ("\n") +
                 "(4)Socialise with People" +("\n")+
                 "(5)Move to another Country" );
@@ -829,22 +829,24 @@ public class IdealTerminal implements Runnable {
 
                     switch (value) {
                         case 1:
-                            job = job.PACKINGBOY;
+                            job = Jobs.PACKINGBOY;
                             professionAssocites = 100;
                             friends = 10;
                             break;
                         case 2:
-                            job = job.INTERN;
+                            job = Jobs.INTERN;
                             professionAssocites = 500;
                             friends = 15;
                             break;
                     }
 
-                }  else  {
+                }  else {
+                    System.out.println("It got past the else");
                     //The Human will be old enough to move into his own country..So use getter from human
                     if (human.getCountry() == Countries.Irada ||
                             human.getCountry() == Countries.Itican ||
                             human.getCountry() == Countries.Albaq) {
+                        System.out.println("It is in the first if statement :)");
                         System.out.println("\n You can only choose jobs that you have access to"
                                 + "\n" + "(1)Beggar:" + begger
                                 + "\n" + "(2)Vagrant:" + vagrant
@@ -857,7 +859,7 @@ public class IdealTerminal implements Runnable {
                         switch (value) {
                             case 1:
                                 if (begger) {
-                                    job = job.BEGGER;
+                                    job = Jobs.BEGGER;
                                     professionAssocites = 10;
                                     friends = 0;
                                 } else {
@@ -867,7 +869,7 @@ public class IdealTerminal implements Runnable {
                                 break;
                             case 2:
                                 if (vagrant) {
-                                    job = job.VAGRANT;
+                                    job = Jobs.VAGRANT;
                                     professionAssocites = 0;
                                     friends = 0;
                                 } else {
@@ -877,7 +879,7 @@ public class IdealTerminal implements Runnable {
                                 break;
                             case 3:
                                 if (packingboy) {
-                                    job = job.PACKINGBOY;
+                                    job = Jobs.PACKINGBOY;
                                     professionAssocites = 10;
                                     friends = 0;
                                 } else {
@@ -909,7 +911,7 @@ public class IdealTerminal implements Runnable {
                             switch (value) {
                                 case 1:
                                     if (firefighter) {
-                                        job = job.FIREFIGHTER;
+                                        job = Jobs.FIREFIGHTER;
                                         professionAssocites = 0;
                                         friends = 0;
                                     } else {
@@ -919,7 +921,7 @@ public class IdealTerminal implements Runnable {
                                     break;
                                 case 2:
                                     if (banker) {
-                                        job = job.BANKTER;
+                                        job = Jobs.BANKTER;
                                         professionAssocites = 10;
                                         friends = 0;
                                     } else {
@@ -931,7 +933,7 @@ public class IdealTerminal implements Runnable {
 
                                 case 3:
                                     if (scientist) {
-                                        job = job.SCIENTIST;
+                                        job = Jobs.SCIENTIST;
                                         professionAssocites = 10;
                                         friends = 0;
                                     } else {
@@ -961,7 +963,7 @@ public class IdealTerminal implements Runnable {
                         switch (value) {
                             case 1:
                                 if (banker) {
-                                    job = job.BANKTER;
+                                    job = Jobs.BANKTER;
                                     professionAssocites = 100;
                                     friends = 100;
                                 } else {
@@ -973,7 +975,7 @@ public class IdealTerminal implements Runnable {
 
                             case 2:
                                 if (scientist) {
-                                    job = job.SCIENTIST;
+                                    job = Jobs.SCIENTIST;
                                     professionAssocites = 100;
                                     friends = 100;
                                 } else {
@@ -984,7 +986,7 @@ public class IdealTerminal implements Runnable {
 
                             case 3:
                                 if (independent) {
-                                    job = job.INDEPENDENT;
+                                    job = Jobs.INDEPENDENT;
                                     professionAssocites = 100000;
                                     friends = 10000000;
                                 } else {
@@ -994,7 +996,7 @@ public class IdealTerminal implements Runnable {
                                 break;
                             case 4:
                                 if (buisnessowner) {
-                                    job = job.BUSINESSOWNER;
+                                    job = Jobs.BUSINESSOWNER;
                                     professionAssocites = 10000;
                                     friends = 10000;
                                 } else {
@@ -1023,7 +1025,7 @@ public class IdealTerminal implements Runnable {
 
                             case 1:
                                 if (independent) {
-                                    job = job.INDEPENDENT;
+                                    job = Jobs.INDEPENDENT;
                                     professionAssocites = 200000;
                                     friends = 2000000;
                                 } else {
@@ -1035,7 +1037,7 @@ public class IdealTerminal implements Runnable {
                             case 2:
                                 // private Boolean banker,independent,buisnessowner,king,intern;
                                 if (king) {
-                                    job = job.KING;
+                                    job = Jobs.KING;
                                     professionAssocites = 2000000;
                                     friends = 2000000;
                                 } else {
@@ -1045,7 +1047,7 @@ public class IdealTerminal implements Runnable {
                                 break;
                             case 3:
                                 if (king && sultan) {
-                                    job = job.SULTAN;
+                                    job = Jobs.SULTAN;
                                     professionAssocites = 100000000;
                                     friends = 100000;
                                 } else if (king && !sultan || sultan && !king) {
@@ -1068,8 +1070,10 @@ public class IdealTerminal implements Runnable {
                         "Raises the amount of friends");
                 human.setOverAllwealth(human.getWealthDoubleValue()-2500*countries.getMultiplier());
                 System.out.println("You got charged:$"+2500*countries.getMultiplier());
+
                          schoolAttendanceAmount++;
-                if (human.getWealthDoubleValue() >= 1 && human.getInfluence() >= 1 && schoolAttendanceAmount>=0) {
+                System.out.println("School Attendance:"+schoolAttendanceAmount);
+                if (human.getWealthDoubleValue() >= 1 && human.getInfluence() >= 1 || schoolAttendanceAmount>=0) {
                     if (!begger) {
                         begger = true;
                         System.out.println("You have unlocked the Begger Job");
@@ -1078,7 +1082,7 @@ public class IdealTerminal implements Runnable {
                         vagrant = true;
                         System.out.println("You have unlocked the Vagrant Job");
                     }
-                }if(human.getWealthDoubleValue()>=10000 && human.getInfluence()>=20000 && schoolAttendanceAmount>=1){
+                }if(human.getWealthDoubleValue()>=10000 && human.getInfluence()>=20000 || schoolAttendanceAmount>=1){
                     if(!intern){
                         intern=true;
                         System.out.println("You have unlocked the Intern Job");
@@ -1089,7 +1093,7 @@ public class IdealTerminal implements Runnable {
                         firefighter=true;
                         System.out.println("You have unlocked the Firefighter Job");
                 }
-            }if(human.getWealthDoubleValue()>=70000 && human.getInfluence()>=100000 && schoolAttendanceAmount>=2){
+            }if(human.getWealthDoubleValue()>=70000 && human.getInfluence()>=100000 || schoolAttendanceAmount>=2){
                 if(!banker){
                     banker=true;
                     System.out.println("You have unlocked the Banker Job");
@@ -1103,14 +1107,14 @@ public class IdealTerminal implements Runnable {
                     firefighter=true;
                     System.out.println("You have unlocked the Firefighter Job");
                 }
-            }if(human.getWealthDoubleValue()>=1000000 && human.getInfluence()>=100000 && human.getFriends()>10000 && schoolAttendanceAmount>=3){
+            }if(human.getWealthDoubleValue()>=1000000 && human.getInfluence()>=100000 && human.getFriends()>10000 || schoolAttendanceAmount>=3){
                 if(!sultan){
                     sultan=true;
                     System.out.println("You have unlocked the Sultan Job");
 
                 }
 
-            }if(human.getWealthDoubleValue()>=10000000 && human.getInfluence()>=10000000 && human.getFriends()>100000 && human.getWorshippers()>10000 &&  schoolAttendanceAmount>=4) {
+            }if(human.getWealthDoubleValue()>=10000000 && human.getInfluence()>=10000000 && human.getFriends()>100000 && human.getWorshippers()>10000 ||  schoolAttendanceAmount>=4) {
                 if (!god) {
                     god = true;
                     System.out.println("You have unlocked the God Job");
@@ -1203,12 +1207,8 @@ public class IdealTerminal implements Runnable {
     public boolean isObjectInteger(Object o){
         //Suppose to return true if this object is an integer and false if otherwise..Does not work :(
         boolean intBool;
-        if(o instanceof Integer) {
-            //Integer integer = (Integer) o ;
-            intBool= true;
-        } else {
-            intBool= false;
-        }
+        //Integer integer = (Integer) o ;
+        intBool = o instanceof Integer;
         return intBool;
     }
 }
