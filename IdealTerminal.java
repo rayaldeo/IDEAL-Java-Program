@@ -375,13 +375,7 @@ public class IdealTerminal implements Runnable {
 
                 System.out.println("\n" + "/--------------------------------------------------------------------------------------/");
 
-                ///This is so that the user will make a decision  happens every four turns and NOT every turn
-                if ((4 % age) == 0) {
-                    makeLifeDecisions();
-                    //Make sure to have enough moeny before moeving to the richer countries because these taxes can ADD up big time
-                    //countries.setTaxes(countries.getMultiplier() * countries.getTaxes());
 
-                }
                 randomNum = rand.nextInt((30 - 1) + 1);
                 System.out.println(randomNum);
                 if (randomNum <= 14) {
@@ -420,6 +414,12 @@ public class IdealTerminal implements Runnable {
                 +"If you can reach $10,000,000 in wealth and 100,000 in influence in 25 turns; you would have won the game!!"
                 +"\n There are also many other features to unlock in the game"
                 +"\n Create your IDEAL Life");
+        try {
+            Thread.sleep(5000);
+            System.out.println("Waiting...");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         System.out.println("|"+human.getOverAllWealth()+"|"+"|"+countries.getName()+"|"+"|"+countries.getTaxes()+"|| Neighborhood: "+human.getNeighborhood());
         do {
@@ -842,9 +842,9 @@ public class IdealTerminal implements Runnable {
 
                 }  else  {
                     //The Human will be old enough to move into his own country..So use getter from human
-                    if (countries == Countries.Irada ||
-                            countries == Countries.Itican ||
-                            countries == Countries.Albaq) {
+                    if (human.getCountry() == Countries.Irada ||
+                            human.getCountry() == Countries.Itican ||
+                            human.getCountry() == Countries.Albaq) {
                         System.out.println("\n You can only choose jobs that you have access to"
                                 + "\n" + "(1)Beggar:" + begger
                                 + "\n" + "(2)Vagrant:" + vagrant
@@ -889,10 +889,10 @@ public class IdealTerminal implements Runnable {
 
                         }
                     }
-                    if (countries == Countries.Trinentina ||
-                            countries == Countries.Albico ||
-                            countries == Countries.Ugeria ||
-                            countries == Countries.Portada) {
+                    if (human.getCountry() == Countries.Trinentina ||
+                            human.getCountry() == Countries.Albico ||
+                            human.getCountry() == Countries.Ugeria ||
+                            human.getCountry() == Countries.Portada) {
                         value = scanner.nextInt();
                         while (value < 0 || value > 3 /*|| Integer.valueOf(value)*/) {
                             System.out.println("You did not put in a valid command");
@@ -944,9 +944,9 @@ public class IdealTerminal implements Runnable {
 
 
                     }
-                    if (countries == Countries.Kuwador ||
-                            countries == Countries.Ukrark ||
-                            countries == Countries.Rany) {
+                    if (human.getCountry() == Countries.Kuwador ||
+                            human.getCountry() == Countries.Ukrark ||
+                            human.getCountry() == Countries.Rany) {
                         System.out.println("\n You can only choose jobs that you have access to"
                                 + "\n" + "(1)Banker" + banker
                                 + "\n" + "(2)Scientist" + scientist
@@ -1006,7 +1006,7 @@ public class IdealTerminal implements Runnable {
 
                         }
                     }
-                    if (countries == Countries.Heaven) {
+                    if (human.getCountry() == Countries.Heaven) {
 
                         //A boolean will be returned for the access level of all jobs
                         System.out.println("\n You can only choose jobs that you have access to"
@@ -1069,7 +1069,7 @@ public class IdealTerminal implements Runnable {
                 human.setOverAllwealth(human.getWealthDoubleValue()-2500*countries.getMultiplier());
                 System.out.println("You got charged:$"+2500*countries.getMultiplier());
                          schoolAttendanceAmount++;
-                if (human.getWealthDoubleValue() >= 1 && human.getInfluence() >= 1 && schoolAttendanceAmount>0) {
+                if (human.getWealthDoubleValue() >= 1 && human.getInfluence() >= 1 && schoolAttendanceAmount>=0) {
                     if (!begger) {
                         begger = true;
                         System.out.println("You have unlocked the Begger Job");
@@ -1078,7 +1078,7 @@ public class IdealTerminal implements Runnable {
                         vagrant = true;
                         System.out.println("You have unlocked the Vagrant Job");
                     }
-                }if(human.getWealthDoubleValue()>=10000 && human.getInfluence()>=20000 && schoolAttendanceAmount>4){
+                }if(human.getWealthDoubleValue()>=10000 && human.getInfluence()>=20000 && schoolAttendanceAmount>=1){
                     if(!intern){
                         intern=true;
                         System.out.println("You have unlocked the Intern Job");
@@ -1089,7 +1089,7 @@ public class IdealTerminal implements Runnable {
                         firefighter=true;
                         System.out.println("You have unlocked the Firefighter Job");
                 }
-            }if(human.getWealthDoubleValue()>=70000 && human.getInfluence()>=100000 && schoolAttendanceAmount>8){
+            }if(human.getWealthDoubleValue()>=70000 && human.getInfluence()>=100000 && schoolAttendanceAmount>=2){
                 if(!banker){
                     banker=true;
                     System.out.println("You have unlocked the Banker Job");
@@ -1103,14 +1103,14 @@ public class IdealTerminal implements Runnable {
                     firefighter=true;
                     System.out.println("You have unlocked the Firefighter Job");
                 }
-            }if(human.getWealthDoubleValue()>=1000000 && human.getInfluence()>=100000 && human.getFriends()>10000 && schoolAttendanceAmount>15){
+            }if(human.getWealthDoubleValue()>=1000000 && human.getInfluence()>=100000 && human.getFriends()>10000 && schoolAttendanceAmount>=3){
                 if(!sultan){
                     sultan=true;
                     System.out.println("You have unlocked the Sultan Job");
 
                 }
 
-            }if(human.getWealthDoubleValue()>=10000000 && human.getInfluence()>=10000000 && human.getFriends()>100000 && human.getWorshippers()>10000 &&  schoolAttendanceAmount>20) {
+            }if(human.getWealthDoubleValue()>=10000000 && human.getInfluence()>=10000000 && human.getFriends()>100000 && human.getWorshippers()>10000 &&  schoolAttendanceAmount>=4) {
                 if (!god) {
                     god = true;
                     System.out.println("You have unlocked the God Job");
