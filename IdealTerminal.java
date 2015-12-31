@@ -36,8 +36,8 @@ public class IdealTerminal implements Runnable {
                 "              M.        MM    MM         MM   .M          MM.          MM             \n" +
                 "              M.        MM     MM        MM              ..MM          MM             \n" +
                 "              M.        MM      MM       MM .M           M  MM         MM             \n" +
-                "              M.        MM      MM       MM  M          M-_-MM         MM             \n" +
-                "              M.        MM     .MM       MM  .          M    MM        MM             \n" +
+                "              M.        MM      MM       MM .M          M-_-MM         MM             \n" +
+                "              M.        MM     .MM       MM             M    MM        MM             \n" +
                 "              M.        MM     MM        MM     M      M     .M        MM     M       \n" +
                 "             MMMMM      MMMMMMM+        NMMMMMMMMM    MMMM$  ZMMMM    .MMMMMMMMM  ");
 
