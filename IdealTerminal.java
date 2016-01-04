@@ -1,4 +1,3 @@
-
 /**
  * Created by jelliott on 9/25/2015.
  */
@@ -245,10 +244,10 @@ public class IdealTerminal implements Runnable {
 
         System.out.println("\n");
         System.out.println("Now...make a Family");
-        if(familyName.equals("")) {
-            System.out.println("Type in a Family Name");
-            this.familyName = scanner.next();
-        }
+        //if(familyName.equals("")) {
+          //  System.out.println("Type in a Family Name");
+            //this.familyName = scanner.next();
+        //}
         System.out.println("(1)Generate a Poor Family " + ("\n") +
                 "(2)Generate a Middle Family" + ("\n") +
                 "(3)Generate a Rich Family" + ("\n") +
@@ -1050,10 +1049,9 @@ public class IdealTerminal implements Runnable {
                                     job = Jobs.SULTAN;
                                     professionAssocites = 100000000;
                                     friends = 100000;
-                                } else if (king && !sultan || sultan && !king) {
-                                    System.out.println("You either don't have access to the King or Sultan job");
+
                                 } else {
-                                    System.out.println("You don;t have access to this job");
+                                    System.out.println("You don't have access to this job");
                                     makeLifeDecisions();
                                 }
                                 break;
