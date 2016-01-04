@@ -1,29 +1,17 @@
-
 /**
  * Created by jelliott on 9/25/2015.
  */
 public enum Countries {
 
     /*Countries with the lowest taxes*/
-
     Irada("Irada",1,1,1,"poor","middle","rich",1,1,1),
 
     Itican("Itican",1,1,1,"poor","middle","rich",10,10,10),
 
-
-
-
-
     /*Countries with average taxes*/
-
     Albaq("Albaq",300,10.5,5000000,"poor","middle","rich",100,100,100),
 
     Trinentina("Trinentina",300,10.5,5000000,"poor","middle","rich",300,300,300),
-
-
-
-
-
 
     /*Countries with high taxes*/
     Albico("Albico",1000,30.5,999999,"poor","middle","rich",500,500,500),
@@ -32,11 +20,6 @@ public enum Countries {
 
     Portada("Portada",1000,30.5,999999,"poor","middle","rich",10000,10000,10000),
 
-
-
-
-
-
     /*Places not for poor people*/
     Kuwador("Kuwador",10000,1000.5,999999,"poor","middle","rich",40000,40000,40000),
 
@@ -44,24 +27,12 @@ public enum Countries {
 
     Rany("Rany",15000,5000.5,999999,"poor","middle","rich",150000,150000,150000),
 
-
-
-
-
-
-
     /*The Holy Places*/
     Heaven("Heaven",0,0,999999,"poor","middle","rich",999999,999999,999999);
-
-
-
-
 
     private  int requiredFriends,requiredConnections;
     private double multiplier,taxes,income,requireedWealth;
     private String name,poorNeighborHood, middleNeighborHood,richNeighborHood;
-
-
 
     Countries(){
         this.taxes =0.0;
@@ -85,11 +56,17 @@ public enum Countries {
 
     //Getters
     public double getTaxes(){return taxes;}
+
     public double getMultiplier(){return multiplier;}
+
     public double getIncome(){return income;}
+
     public String getName(){return name;}
+
     public String getPoorNeighborHood(){return poorNeighborHood;}
+
     public String getMiddleNeighborHood(){return middleNeighborHood;}
+
     public String getRichNeighborHood(){return richNeighborHood;}
 
     public int getRequiredInfluence() {
@@ -104,12 +81,13 @@ public enum Countries {
         return requireedWealth;
     }
 
-
-
     //Setters
     public void setTaxes(double taxesA){ taxes= taxesA;}
+
     public void setMultiplier(double multiplierA){multiplier= multiplierA;}
+
     public void setIncome(double incomeA){income= incomeA;}
+
     public void setName(String nameA) { this.name = name;}
 
     public void setRequiredInfluence(int requiredConnections) {

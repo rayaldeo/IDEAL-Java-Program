@@ -17,9 +17,6 @@ public class Family {
 
     //FamilyMemeber Constructor
     //(String firstNameA,String familyNameA,Jobs jobA,Countries countryA,int friendsA,int worshippers
-
-
-
     //Custom Family with a custom name
     public Family(String familyNameA,FamilyMember brotherA, FamilyMember sisterA, FamilyMember fatherA, FamilyMember motherA) {
         this.familyName = familyNameA;
@@ -43,14 +40,7 @@ public class Family {
         country=fatherA.getCountry();
     }
 
-
-
-
-
-    public Family(int fatherA, int motherA, int sisterA, int brotherA) {
-
-    }
-
+    public Family(int fatherA, int motherA, int sisterA, int brotherA) {}
 
     ///Getters
     //Getters
@@ -68,7 +58,6 @@ public class Family {
 
     public String getFamilyName(){ return familyName;   }
 
-
     public String getFamilyCountry(){return country.getName();}
 
     public int getFamilyFriends(){return familyFriends;}
@@ -76,29 +65,6 @@ public class Family {
     public int getFamilyWorshippers(){return familyWorshippers;}
 
     public String getFamilyNeighborhood(){return neighborhood;}
-
-
-
-    //public String getFamilyNeighborhood(){return country.getName();}
-
-
-
-    //Setters
-
-    //This is not a good way to go about the wealth/influence number because setting the wealth for the entire family  from this method does not account for the wealth distributed throughout the family
-        /*
-
-                Family with family.set(wealthX)        !=                      Family with wealthA(brother+father+mother+sister wealth added together)
-                                         Mother = has this career
-                                         Father= has this other career
-
-               Family with family.set(wealthX)        !=                      Family with wealthA(brother+father+mother+sister wealth added together)
-                                         Mother = has this career
-                                         Father= has this other career
-
-              WARNING: Setters will only be used within the Family Constructor
-         */
-
 
     public void setFamilyWealth(double familyWealthA) {
         this.familyWealth = familyWealthA;

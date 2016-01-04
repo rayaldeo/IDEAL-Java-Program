@@ -19,7 +19,7 @@ import javafx.scene.control.Label;
  */
 public class IdealForTutorialPurposes extends Application{
     private Button startButton,loadCharacterButton,exitButton;
-   private Human human;
+    private Human human;
     private Jobs job;
     private NameGenerator name;
     private Neighborhood neighborhood;
@@ -29,15 +29,13 @@ public class IdealForTutorialPurposes extends Application{
 
      */
     private Stage window;
-    private Scene sceneOne,sceneTwo;
 
+    private Scene sceneOne,sceneTwo;
 
     public static void main (String args) {
         launch(args);
 
     }
-
-
 
     @Override
     public void start(Stage primaryStage) throws Exception {

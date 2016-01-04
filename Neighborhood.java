@@ -7,6 +7,7 @@
 public class Neighborhood {
 
     private Integer requireedWealth,requiredFriends,requiredConnections;
+
     private String name;
 
     public Neighborhood(){}

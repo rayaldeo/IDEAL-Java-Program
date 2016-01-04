@@ -45,6 +45,7 @@ public class Human {
 
 
     }
+
     //This constructor is used specifically for  the FamilyMember class
     //Deleting this constructor ruins a core mechanic of this program
     public Human(boolean sex,String familyNameA,Jobs jobA,Countries countryA,int friendsA,int worshippersA){
@@ -76,7 +77,7 @@ public class Human {
 
     public String getColor(){return  color;}
 
-   public double getFamilyWealth(){return familyWealth;}
+    public double getFamilyWealth(){return familyWealth;}
 
     public int getInfluence(){return influence;}
 

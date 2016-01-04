@@ -25,6 +25,7 @@ import javax.swing.*;
 import javax.xml.soap.Text;
 
 import javafx.scene.control.Label;
+
 public class Menu extends Application {
 
     Stage window;
@@ -32,15 +33,9 @@ public class Menu extends Application {
     Button startButton,loadButton,exitButton;
     Label label;
 
-
-
-
-
     public static void main (String[] args){
         launch(args);
     }
-
-
 
     @Override
     public void start(Stage primaryStage) throws Exception {

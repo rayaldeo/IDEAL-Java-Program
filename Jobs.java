@@ -5,8 +5,6 @@
 
 public enum Jobs {
 
-
-
     /*Non Paying Jobs */
     NOJOB("null",1,1),/*This is the default state for a job*/
     BEGGER("Begger",5,5),

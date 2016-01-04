@@ -11,9 +11,6 @@ public class FamilyMember extends Human {
     //private Countries country;
     //private String familyName,firstName,name;
 
-
-
-
 //For a Custom Family
     public FamilyMember(boolean sex,String familyNameA,Jobs jobA,Countries countryA,int friendsA,int worshippers) {
 
