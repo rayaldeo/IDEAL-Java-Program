@@ -1319,41 +1319,54 @@ public class IdealTerminal implements Runnable {
                     chancesOfLife();
                 }switch(value) {
                 case 0:
-                    human.setJob(Jobs.BEGGER);
-                    System.out.print("You are now a"+human.getJob().getName());
+                    job =Jobs.BEGGER;
+                        begger=true;
                     break;
                 case 1:
-                    human.setJob(Jobs.VAGRANT);
+                    job =Jobs.VAGRANT;
+                        vagrant=true;
                     break;
                 case 2:
-                    human.setJob(Jobs.INTERN);
+                    job =Jobs.INTERN;
+                    intern=true;
                     break;
                 case 3:
-                    human.setJob(Jobs.PACKINGBOY);
+                    job =Jobs.PACKINGBOY;
+                    packingboy=true;
                     break;
                 case 4:
-                    human.setJob(Jobs.FIREFIGHTER);
+                    job =Jobs.FIREFIGHTER;
+                    firefighter=true;
                     break;
                 case 5:
-                    human.setJob(Jobs.BANKTER);
+                    job =Jobs.BANKTER;
+                    banker=true;
                     break;
                 case 6:
-                    human.setJob(Jobs.SCIENTIST);
+                    job =Jobs.SCIENTIST;
+                    scientist=true;
                     break;
                 case 7:
-                    human.setJob(Jobs.INDEPENDENT);
+                    job =Jobs.INDEPENDENT;
+                    independent=true;
                     break;
                 case 8:
-                    human.setJob(Jobs.BUSINESSOWNER);
+                    job =Jobs.BUSINESSOWNER;
+                    buisnessowner=true;
                     break;
                 case 9:
-                    human.setJob(Jobs.KING);
+                    job =Jobs.KING;
+                    king=true;
                     break;
                 case 10:
-                    human.setJob(Jobs.SULTAN);
+                    job =Jobs.SULTAN;
+                    sultan=true;
+                    god=true;
                     break;
                 case 11:
-                    human.setJob(Jobs.GOD);
+                    job =Jobs.GOD;
+                    sultan=true;
+                    god=true;
                     break;
 
                     }
@@ -1366,7 +1379,8 @@ public class IdealTerminal implements Runnable {
 
                 System.out.println("You are now an Omega");
                 omega=true;
-                human.setJob(Jobs.OMEGA);
+                job =Jobs.OMEGA;
+
 
 
 
