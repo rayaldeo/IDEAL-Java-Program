@@ -11,14 +11,13 @@ public class IdealTerminal implements Runnable {
     private NameGenerator name,nameOfChar;
     //private Neighborhood neighborhood;
     private int age, schoolAttendanceAmount,socialisingWithFriends,workingOnPhysicalApp;
-    private int value,looks=0,worshippers=0,friends=0,professionAssocites=0,influence=0;
+    private int value,looks=0,worshippers=0,friends=0,professionAssocites=0,influence=0,wealth=0;
     private Boolean booolean,banker=false,independent=false,buisnessowner=false,king=false,intern=false,male;
     private Family family;
     private Countries countries;
     private Scanner scanner=new Scanner(System.in);
     private FamilyMember mother,sister,brother,father;
     private String familyName, firstNamePart,lastNamePart;
-    private int multiplier=1;
     Random rand = new Random();
     int randomNum = rand.nextInt((50-1)+1);
     private boolean begger=false;
@@ -29,12 +28,15 @@ public class IdealTerminal implements Runnable {
     private boolean god=false;
     private boolean sultan=false;
     private boolean worshippersFollow=false;
+    private boolean omega=false;
+
 
     //This variable is placed outside worshippersFollow(boolean worshippersFollow) method
     //because I need this number to activate only when worshippersFollow(boolean worshippersFollow) and it must stay the same
     //IT MUST NOT UPDATE WHILE THE GAME IS RUNNING BECAUSE ONCE IT ACTIVATES TI WILL CONTINUE UNTIL THE END OF THE GAME
     //This will not break the game but this feature is a buff and not a permanent fixture on the game's state
     private  int tempNum =age-10;
+
 
     public void run(){
         System.out.println("            MMMMM.     .MMMMMM          MMMMMMMMM         .M          MMMMM           \n" +
@@ -183,7 +185,7 @@ public class IdealTerminal implements Runnable {
 
         try {
             Thread.sleep(500);
-            //System.out.println("Waiting...");
+            //System.out.println("Loading...");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -391,15 +393,15 @@ public class IdealTerminal implements Runnable {
         System.out.println("INITIAL STATE");
         System.out.println("|"+family.getFamilyWealth()+"|"+"|"+countries.getName()+"||"+countries.getTaxes());
         System.out.println("\n"+"/--------------------------------------------------------------------------------------/");
-            age=1;
+            age=18;
         do {
 
                 System.out.println("\n" + "/--------------------------------------------------------------------------------------/");
 
 
-                randomNum = rand.nextInt((30 - 1) + 1);
+                randomNum = rand.nextInt(30);
                 //System.out.println(randomNum);
-                if (randomNum <= 14) {
+                if (randomNum <= 13) {
                     chancesOfLife();
                 }
 
@@ -437,7 +439,7 @@ public class IdealTerminal implements Runnable {
                 +"\n Create your IDEAL Life");
         try {
             Thread.sleep(5000);
-            System.out.println("Waiting...");
+            System.out.println("Loading...");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -453,13 +455,13 @@ public class IdealTerminal implements Runnable {
                     //countries.setTaxes(countries.getMultiplier() * countries.getTaxes());
 
                 }
-            randomNum = rand.nextInt((30 - 1) + 1);
+            randomNum = rand.nextInt(30);
             //System.out.println(randomNum);
-            if (randomNum <= 14) {
+            if (randomNum <= 13) {
                 chancesOfLife();
             }
 
-                System.out.println("Turn: " + age + "\n" +"|Human" +"|" + human.getOverAllWealth() + "|" + "|" + countries.getName() + "|" + "|" + countries.getTaxes());
+                System.out.println("Turn: " + age + "\n" +"|Adult" +"|" + human.getOverAllWealth() + "|" + "|" + countries.getName() + "|" + "|" + countries.getTaxes());
                 this.worshippersFollow(worshippersFollow);
                 updatingStateOfHuman(job, looks, worshippers, friends, professionAssocites, influence);
                 CharDetails();
@@ -539,7 +541,7 @@ public class IdealTerminal implements Runnable {
         System.out.println("Finishing up the Final Touches on your new Character");
         try {
             Thread.sleep(500);
-            //System.out.println("Waiting...");
+            //System.out.println("Loading...");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -579,10 +581,10 @@ public class IdealTerminal implements Runnable {
                     "........................................");
 
             System.out.println("\n");
+            ///If you want to test any specific chance of life just place in the case number into switch bracket..the program will only run that switch
+            switch (7) {
 
-            switch (randomNum) {
-
-                case 1:
+                case 0:
                     //Move to another country with higher or lower income
                     //This affects your wealth with the family in the tutorial
                     //This will affect your overall wealth in th later game
@@ -591,7 +593,7 @@ public class IdealTerminal implements Runnable {
                     //CountryDetails();
 
                     break;
-                case 2:
+                case 1:
 
                     //System.out.println("2");
                     if (human.getFriends() > 1000 || human.getFriends() + family.getFamilyFriends() > 1000) {
@@ -610,7 +612,7 @@ public class IdealTerminal implements Runnable {
 
 
                     break;
-                case 3:
+                case 2:
 
                     //System.out.println("3");
                     if (human.getInfluence() > 100000 || human.getInfluence() + family.getFamilyInfluence() > 100000) {
@@ -627,7 +629,7 @@ public class IdealTerminal implements Runnable {
 
 
                     break;
-                case 4:
+                case 3:
 
                     //System.out.println("4");
                     if (human.getFriends() > 100000 || human.getFriends() + family.getFamilyFriends() > 100000) {
@@ -644,7 +646,7 @@ public class IdealTerminal implements Runnable {
                     }
 
                     break;
-                case 5:
+                case 4:
 
                     //System.out.println("5");
                     System.out.println("A storm came over and destroyed you car.You lose some of your money in the process of replacing it");
@@ -653,7 +655,7 @@ public class IdealTerminal implements Runnable {
                     CharDetails();
 
                     break;
-                case 6:
+                case 5:
                     //System.out.println("6");
 
                     if (human.getLooks() > 1 && human.getLooks() < 5) {
@@ -681,7 +683,7 @@ public class IdealTerminal implements Runnable {
                     }
                     CharDetails();
                     break;
-                case 7:
+                case 6:
                     //System.out.println("7");
                     if(god&&age>20) {
                         System.out.println("You have surpass the earthly domain and is ready to create your own heaven");
@@ -699,29 +701,50 @@ public class IdealTerminal implements Runnable {
 
                     break;
 
-                case 8:
-                    if(human.getJob()!=Jobs.NOJOB||human.getJob()!=Jobs.BEGGER||human.getJob()!=Jobs.VAGRANT) {
-                        if (human.getFriends() > 100000 || human.getFriends() + family.getFamilyFriends() > 100000) {
+                case 7:
+                     Jobs temjobA=human.getJob(); ///I must undo any changes if the user doesn't comply with my instructions
+                    if(age>19) {
+                        System.out.println("You magically found a genie and he is able to grant you three wishes!");
 
-                            System.out.println("You got a promotion in your current job and will now be earning 3X income and influence.Good Work!");
-                            multiplier =3;
+                        for (int i = 0; i < 3; i++) {
 
-                         }else {
-                            System.out.println("You got a promotion in your current job and will now be earning 2X income and influence.Good Work!");
-                            multiplier = 2;
-                        }
-                    } else {
-                       System.out.println("You got a loan from your family of $1000");
-                        human.setOverAllwealth(human.getWealthDoubleValue()+1000);
-                        family.setFamilyWealth(family.getFamilyWealth()-1000);
+                            System.out.println(" Options are displayed..Choose ONE..or lose your three wishes completely");
+                            System.out.println("(1)Improve your physical Appearance  " + ("\n") +
+                                    "(2)Increase the number of Worshippers" + ("\n") +
+                                    "(3)Increase the number of Friends" + ("\n") +
+                                    "(4)Increase the number of Professional Associates" + ("\n") +
+                                    "(5)Increase you Influence" + ("\n") +
+                                    "(6)Increase your Wealth" + ("\n") +
+                                    "(7)Choose any job you desire" + ("\n") +
+                                    "(0)Special" + ("\n"));
+                            value = scanner.nextInt();
+                            if (value < 0 || value > 7 /*|| Integer.valueOf(value)*/) {
+                                ///I must undo any changes if the user doesn't comply with my instructions
+                                //looks=0,worshippers=0,friends=0,professionAssocites=0,influence=0,wealth=0;
+                                human.setJob(temjobA);
+                                worshippers = 0;
+                                wealth = 0;
+                                friends = 0;
+                                looks = 0;
+                                professionAssocites = 0;
+                                influence = 0;
+                                System.out.println("You did not place in a proper command,upsetting the Genie.You lose all three of your wishes");
+                                chancesOfLife();
+
+                            }
+                            selectingAWish(value);
+                            }
+
+
+                    }else{
+                        updatingStateOfHuman(Jobs.NOJOB,1,10,10,10,100);
+                        System.out.println("You get a slight boost in wealth, worshippers,friends,looks,professional associates, and influence");
                     }
-
-
 
 
                     break;
 
-                case 9:
+                case 8:
                     //System.out.println("9");
                     System.out.println("You won the lottery so you will gain $500000");
                     human.setOverAllwealth(human.getWealthDoubleValue() + 500000);
@@ -730,7 +753,7 @@ public class IdealTerminal implements Runnable {
                     break;
 
 
-                case 10:
+                case 9:
                     //System.out.println("10");
                     System.out.println("Your recent trip to IDEAL Center of Academics added professional Associates to call onto later in life");
                     human.setProfessionalAssociates(human.getProfessionalAssociates()+500);
@@ -739,7 +762,7 @@ public class IdealTerminal implements Runnable {
 
                     break;
 
-                case 11:
+                case 10:
 
                     //System.out.println("11");
                     System.out.println("You get a boost in influence, wealth, and friends!You are very lucky");
@@ -750,7 +773,7 @@ public class IdealTerminal implements Runnable {
 
                     break;
 
-                case 12:
+                case 11:
 
                     //System.out.println("12");
                     System.out.println("You get a boost in professional associates, looks, and worshippers !You are very lucky");
@@ -761,7 +784,7 @@ public class IdealTerminal implements Runnable {
 
                     break;
 
-                case 13:
+                case 12:
 
                     //System.out.println("13");
                     System.out.println("You lose in  influence, wealth, and friends!You are very unlucky");
@@ -772,7 +795,7 @@ public class IdealTerminal implements Runnable {
 
                     break;
 
-                case 14:
+                case 13:
 
                    // System.out.println("14");
                     System.out.println("You lose in professional associates, looks, and worshippers !You are very unlucky");
@@ -800,7 +823,7 @@ public class IdealTerminal implements Runnable {
     public void makeLifeDecisions() {
         //try {
         //    Thread.sleep(1000);
-        //    System.out.println("Waiting...");
+        //    System.out.println("Loading...");
         //} catch (InterruptedException e) {
         //    e.printStackTrace();
         //}
@@ -853,7 +876,7 @@ public class IdealTerminal implements Runnable {
         }
         switch (value) {
             case 1:
-                //Scanner and the if statement will always be waiting for a wrong option while everything so if the user places anything outside the desired options then that user will be  placed back
+                //Scanner and the if statement will always be Loading for a wrong option while everything so if the user places anything outside the desired options then that user will be  placed back
                 //to the top of case 1
                 System.out.println("Get a job: Raises you overall wealth" + "\n" +
                         "Raises the amount of professional Associates" + "\n" +
@@ -940,15 +963,13 @@ public class IdealTerminal implements Runnable {
                             human.getCountry() == Countries.Albico ||
                             human.getCountry() == Countries.Ugeria ||
                             human.getCountry() == Countries.Portada) {
-                        value = scanner.nextInt();
-                        while (value < 0 || value > 3 /*|| Integer.valueOf(value)*/) {
-                            System.out.println("You did not put in a valid command");
-                            this.makeLifeDecisions();
+
                             System.out.println("\n You can only choose jobs that you have access to....Press 0 to go back if you have access to no jobs"
 
                                     + "\n" + "(1)Firefighter:" + firefighter
                                     + "\n" + "(2)Banker" + banker
                                     + "\n" + "(3)Scientist" + scientist);
+                             value = scanner.nextInt();
                             while (value < 0 || value > 3 /*|| Integer.valueOf(value)*/) {
                                 System.out.println("You did not put in a valid command");
                                 this.makeLifeDecisions();
@@ -987,8 +1008,6 @@ public class IdealTerminal implements Runnable {
                                     }
                                     break;
                             }
-                        }
-
 
                     }
                     if (human.getCountry() == Countries.Kuwador ||
@@ -1217,7 +1236,7 @@ public class IdealTerminal implements Runnable {
         System.out.println("\n" + "/--------------------------------------------------------------------------------------/");
         try {
             Thread.sleep(2000);
-            System.out.println("Waiting...");
+            System.out.println("Loading...");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -1229,8 +1248,8 @@ public class IdealTerminal implements Runnable {
                                      int friendsA,int professionalAssociatesA,int influenceA){
         human.setJob(job);
         human.setIncome(job.getIncome());
-        human.setOverAllwealth((human.getWealthDoubleValue()+job.getIncome())*multiplier);
-        human.setInfluence((int) ((human.getInfluence()+job.getInfluence()+influenceA)*multiplier));
+        human.setOverAllwealth((human.getWealthDoubleValue()+job.getIncome()));
+        human.setInfluence( ((human.getInfluence()+job.getInfluence()+influenceA)));
         human.setProfessionalAssociates(human.getProfessionalAssociates()+professionalAssociatesA);
         human.setFriends(human.getFriends()+friendsA);
         human.setLooks(human.getLooks()+looksA);
@@ -1246,6 +1265,111 @@ public class IdealTerminal implements Runnable {
 
         }else{
             human.setNeighborhood(countries.getPoorNeighborHood());
+        }
+
+    }
+
+    public void selectingAWish(int numberSelection){
+       //looks=0,worshippers=0,friends=0,professionAssocites=0,influence=0
+
+        switch (numberSelection) {
+            case 1:
+                //Looks
+                looks=5;
+                System.out.println("Your looks was increased by 5");
+                break;
+
+            case 2:
+                //Worshipers
+                System.out.println("You got 1000 worshippers");
+                worshippers=1000;
+
+                break;
+            case 3:
+                //Friends
+                System.out.println("You got 1000 friends");
+                friends=1000;
+                break;
+            case 4:
+                //ProfessionalAssociates
+                System.out.println("You got 1000 professional Associates");
+                professionAssocites=1000;
+                break;
+            case 5:
+                //Influence
+                System.out.println("You got 1000 Influence");
+                influence=1000;
+                break;
+            case 6:
+                //Wealth
+                System.out.println("You got 100000 wealth");
+                wealth=100000;
+                break;
+            case 7:
+               System.out.println("Choose a job of your liking,get the job, and permanently unlock it for later in life!");
+                System.out.println("Very Low Paying Jobs:(0)Begger (1)Vagrant" + ("\n") +
+                        "Low Paying Jobs that add greater Influence: (2)Intern"  + ("\n") +
+                        "Average Paying Jobs with low Influence: (3)Packingboy (4)Firefighter (5) Banker" + ("\n") +
+                        "Medium Paying Jobs with High Influence: (6)Scientist (7)Independent" + ("\n")+
+                        "Highest Paying Jobs: (8)Business Owner (9)King (10)Sultan" + ("\n")+
+                        "Divine Jobs: (11)God" + ("\n"));
+                value = scanner.nextInt();
+                while(value < 0 || value> 11 /*|| Integer.valueOf(value)*/) {
+                    System.out.println("You did not put in a good command.The Genie Left");
+                    chancesOfLife();
+                }switch(value) {
+                case 0:
+                    human.setJob(Jobs.BEGGER);
+                    System.out.print("You are now a"+human.getJob().getName());
+                    break;
+                case 1:
+                    human.setJob(Jobs.VAGRANT);
+                    break;
+                case 2:
+                    human.setJob(Jobs.INTERN);
+                    break;
+                case 3:
+                    human.setJob(Jobs.PACKINGBOY);
+                    break;
+                case 4:
+                    human.setJob(Jobs.FIREFIGHTER);
+                    break;
+                case 5:
+                    human.setJob(Jobs.BANKTER);
+                    break;
+                case 6:
+                    human.setJob(Jobs.SCIENTIST);
+                    break;
+                case 7:
+                    human.setJob(Jobs.INDEPENDENT);
+                    break;
+                case 8:
+                    human.setJob(Jobs.BUSINESSOWNER);
+                    break;
+                case 9:
+                    human.setJob(Jobs.KING);
+                    break;
+                case 10:
+                    human.setJob(Jobs.SULTAN);
+                    break;
+                case 11:
+                    human.setJob(Jobs.GOD);
+                    break;
+
+                    }
+                System.out.print("\n You are now a "+human.getJob().getName()+("\n"));
+                CharDetails();
+
+                break;
+            case 0:
+                //Become Omega
+
+                System.out.println("You are now an Omega");
+                omega=true;
+                human.setJob(Jobs.OMEGA);
+
+
+
         }
 
     }

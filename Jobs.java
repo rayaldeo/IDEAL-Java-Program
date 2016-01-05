@@ -5,35 +5,35 @@
 
 public enum Jobs {
 
-    /*Non Paying Jobs */
+    /*Very Low Paying Jobs */
     NOJOB("null",1,1),/*This is the default state for a job*/
     BEGGER("Begger",5,5),
     VAGRANT("Vagrant",10,10),
 
-    /*Non Paying Jobs that add Influence*/
+    /*Low Paying Jobs that add  greater Influence*/
     INTERN("Intern",100,40),
 
 
-    /*Average Paying/Influence Jobs with low Influence*/
-    PACKINGBOY("Packaingboy",1500,400),
-    FIREFIGHTER("Firefighter",3500,100),
-    BANKTER("Banker",1000,500),
+    /*Average Paying Jobs with low Influence*/
+    PACKINGBOY("Packaingboy",150,40),
+    FIREFIGHTER("Firefighter",350,10),
+    BANKTER("Banker",100,50),
 
     /*Medium Paying Jobs with High Influence*/
-    SCIENTIST("Scienctist",300,4000),
-    INDEPENDENT("Independent",6000,9000),
+    SCIENTIST("Scienctist",300,400),
+    INDEPENDENT("Independent",600,900),
 
     /*Highest Paying Jobs*/
-    BUSINESSOWNER("BusinessOwner",10000,10000),
-    KING("King",50000,50000),
-    SULTAN("Sultan",90000,90000),
+    BUSINESSOWNER("BusinessOwner",1000,1000),
+    KING("King",5000,5000),
+    SULTAN("Sultan",9000,9000),
 
 
     /*Non Paying Jobs that give incredible amount of Influence*/
-    GOD("GOD",0,1000000),
+    GOD("GOD",0,100000),
 
     /*Incredible amounts of money and Influence*/
-    OMEGA("OMEGA",1000000,1000000);
+    OMEGA("OMEGA",100000,100000);
 
 
     private  double income;
@@ -55,7 +55,7 @@ public enum Jobs {
         return influence;
     }
 
-    public String getJob(){return name;}
+    public String getName(){return name;}
 
 
 }
