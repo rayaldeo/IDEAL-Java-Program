@@ -246,6 +246,8 @@ public class IdealTerminal implements Runnable {
         //I did this because when the user was asked to change countries...this method did not update properly...
         // also meant that the user was stuck picking the same jobs for a certain country even though that user is not there
         if(age>1){
+            family.setCountry(countries);
+        }if(age>=20){
             human.setCountries(countries);
         }
         this.CountryDetails();
@@ -591,9 +593,10 @@ public class IdealTerminal implements Runnable {
                     //Move to another country with higher or lower income
                     //This affects your wealth with the family in the tutorial
                     //This will affect your overall wealth in th later game
-                    System.out.println("You decided to move;so here is the  opportunity to choose a different country!");
-                    SelectACountry();
-                    //CountryDetails();
+
+                        System.out.println("You decided to move;so here is the  opportunity to choose a different country!");
+                        SelectACountry();
+                        //CountryDetails();
 
                     break;
                 case 1:

@@ -80,5 +80,5 @@ public class Family {
 
     public void setNeighborhood(String neighborhoodA){neighborhood=neighborhoodA;}
 
-
+    public void setCountry(Countries countryA){country=countryA;}
 }
