@@ -9,23 +9,23 @@ public enum Countries {
     Itican("Itican",1,1,1,"poor","middle","rich",10,10,10),
 
     /*Countries with average taxes*/
-    Albaq("Albaq",300,10.5,5000000,"poor","middle","rich",100,100,100),
+    Albaq("Albaq",30,10.5,5000000,"poor","middle","rich",100,100,100),
 
-    Trinentina("Trinentina",300,10.5,5000000,"poor","middle","rich",300,300,300),
+    Trinentina("Trinentina",30,10.5,5000000,"poor","middle","rich",300,300,300),
 
     /*Countries with high taxes*/
-    Albico("Albico",1000,30.5,999999,"poor","middle","rich",500,500,500),
+    Albico("Albico",100,30.5,999999,"poor","middle","rich",500,500,500),
 
-    Ugeria("Ugeria",1000,30.5,999999,"poor","middle","rich",1000,2000,3000),
+    Ugeria("Ugeria",100,30.5,999999,"poor","middle","rich",1000,2000,3000),
 
-    Portada("Portada",1000,30.5,999999,"poor","middle","rich",10000,10000,10000),
+    Portada("Portada",100,30.5,999999,"poor","middle","rich",10000,10000,10000),
 
     /*Places not for poor people*/
-    Kuwador("Kuwador",10000,1000.5,999999,"poor","middle","rich",40000,40000,40000),
+    Kuwador("Kuwador",150,1000.5,999999,"poor","middle","rich",40000,40000,40000),
 
-    Ukrark("Ukrark",15000,3000.5,999999,"poor","middle","rich",60000,60000,60000),
+    Ukrark("Ukrark",200,3000.5,999999,"poor","middle","rich",60000,60000,60000),
 
-    Rany("Rany",15000,5000.5,999999,"poor","middle","rich",150000,150000,150000),
+    Rany("Rany",500,5000.5,999999,"poor","middle","rich",150000,150000,150000),
 
     /*The Holy Places*/
     Heaven("Heaven",0,0,999999,"poor","middle","rich",999999,999999,999999);

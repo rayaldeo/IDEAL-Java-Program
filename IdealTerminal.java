@@ -406,6 +406,7 @@ public class IdealTerminal implements Runnable {
                 }
 
                 System.out.println("Turn: " + age + "\n" +"|Family" +"|" + family.getFamilyWealth() + "|" + "|" + countries.getName() + "|" + "|" + countries.getTaxes());
+                updatingStateOfFamily(wealth,influence);
                 updatingStateOfHuman(job, looks, worshippers, friends, professionAssocites, influence);
                 FamilyDetails();
                 System.out.println("\n" + "/--------------------------------------------------------------------------------------/");
@@ -413,7 +414,8 @@ public class IdealTerminal implements Runnable {
 
 
         }while(age<20);
-
+        //Once this human reaches 20 years of age then the family's wealth will be given to the human
+        human.setWealth(family.getFamilyWealth());
 
         //do {
         //    System.out.println("\n" + "/--------------------------------------------------------------------------------------/");
@@ -444,7 +446,7 @@ public class IdealTerminal implements Runnable {
             e.printStackTrace();
         }
 
-        System.out.println("|"+human.getOverAllWealth()+"|"+"|"+countries.getName()+"|"+"|"+countries.getTaxes()+"|| Neighborhood: "+human.getNeighborhood());
+        System.out.println("Adult||Initial Wealth:"+human.getInitialWealth()+"|"+"|"+countries.getName()+"|"+"|"+countries.getTaxes()+"|| Neighborhood: "+human.getNeighborhood());
         do {
 
                 System.out.println("\n" + "/--------------------------------------------------------------------------------------/");
@@ -599,12 +601,12 @@ public class IdealTerminal implements Runnable {
                     //System.out.println("2");
                     if (human.getFriends() > 1000 || human.getFriends() + family.getFamilyFriends() > 1000) {
                         System.out.println("Your family is Famous and this allows you to earn $500");
-                        human.setWealth(human.getWealthDoubleValue() + 500);
+                        human.setOverAllwealth(human.getWealthDoubleValue() + 500);
                         System.out.println("This character's wealth is $" + human.getOverAllWealth());
                         CharDetails();
                     } else if (human.getFriends() > 500 || human.getFriends() + family.getFamilyFriends() > 500) {
                         System.out.println("You family is Famous and this allows you to earn $100");
-                        human.setWealth(human.getWealthDoubleValue() + 100);
+                        human.setOverAllwealth(human.getWealthDoubleValue() + 100);
                         System.out.println("This character's wealth is $" + human.getOverAllWealth());
                         CharDetails();
                     } else {
@@ -650,10 +652,16 @@ public class IdealTerminal implements Runnable {
                 case 4:
 
                     //System.out.println("5");
-                    System.out.println("A storm came over and destroyed you car.You lose some of your money in the process of replacing it");
-                    human.setOverAllwealth(human.getWealthDoubleValue() -10000);
-                    System.out.println("You got charged:10000");
-                    CharDetails();
+                    System.out.println("A storm came over and destroyed your car.You lose some of your money in the process of replacing it");
+                    if(age>20) {
+                        human.setOverAllwealth(human.getWealthDoubleValue() - 10000);
+                        System.out.println("You got charged:10000");
+                        CharDetails();
+                    }else{
+                        wealth=-10000;
+                        updatingStateOfFamily(wealth,0);
+                        wealth=0;
+                    }
 
                     break;
                 case 5:
@@ -751,9 +759,18 @@ public class IdealTerminal implements Runnable {
 
                 case 8:
                     //System.out.println("9");
-                    System.out.println("You won the lottery so you will gain $500000");
-                    human.setOverAllwealth(human.getWealthDoubleValue() + 500000);
-                    System.out.println(human.getOverAllWealth());
+                    if (age > 20) {
+                        System.out.println("You won the lottery so you will gain $500000");
+                        human.setOverAllwealth(human.getWealthDoubleValue() + 500000);
+                        System.out.println(human.getOverAllWealth());
+
+                    }else{
+                        wealth=500000;
+                        updatingStateOfFamily(wealth,0);
+                        System.out.println("Your family won the lottery,gained $500000");
+                        wealth=0;
+                    }
+
 
                     break;
 
@@ -972,8 +989,8 @@ public class IdealTerminal implements Runnable {
                             System.out.println("\n You can only choose jobs that you have access to....Press 0 to go back if you have access to no jobs"
 
                                     + "\n" + "(1)Firefighter:" + firefighter
-                                    + "\n" + "(2)Banker" + banker
-                                    + "\n" + "(3)Scientist" + scientist);
+                                    + "\n" + "(2)Banker:" + banker
+                                    + "\n" + "(3)Scientist:" + scientist);
                              value = scanner.nextInt();
                             while (value < 0 || value > 3 /*|| Integer.valueOf(value)*/) {
                                 System.out.println("You did not put in a valid command");
@@ -1019,10 +1036,10 @@ public class IdealTerminal implements Runnable {
                             human.getCountry() == Countries.Ukrark ||
                             human.getCountry() == Countries.Rany) {
                         System.out.println("\n You can only choose jobs that you have access to....Press 0 to go back if you have access to no jobs"
-                                + "\n" + "(1)Banker" + banker
-                                + "\n" + "(2)Scientist" + scientist
-                                + "\n" + "(3)Independent" + independent
-                                + "\n" + "(4)Business Owner" + buisnessowner);
+                                + "\n" + "(1)Banker:" + banker
+                                + "\n" + "(2)Scientist:" + scientist
+                                + "\n" + "(3)Independent:" + independent
+                                + "\n" + "(4)Business Owner:" + buisnessowner);
 
                         value = scanner.nextInt();
                         while (value < 0 || value > 4 || value == 0/*|| Integer.valueOf(value)*/) {
@@ -1081,9 +1098,9 @@ public class IdealTerminal implements Runnable {
 
                         //A boolean will be returned for the access level of all jobs
                         System.out.println("\n You can only choose jobs that you have access to....Press 0 to go back if you have access to no jobs"
-                                + "\n" + "(1)Independent" + independent
-                                + "\n" + "(2)King" + king
-                                + "\n" + "(3)Sultan" + sultan);
+                                + "\n" + "(1)Independent:" + independent
+                                + "\n" + "(2)King:" + king
+                                + "\n" + "(3)Sultan:" + sultan);
 
                         value = scanner.nextInt();
                         while (value < 0 || value > 9 || value == 0/*|| Integer.valueOf(value)*/) {
@@ -1272,6 +1289,26 @@ public class IdealTerminal implements Runnable {
             human.setNeighborhood(countries.getPoorNeighborHood());
         }
 
+    }
+
+    public void updatingStateOfFamily(int wealthA,int influenceA){
+        family.setFamilyWealth(family.getFamilyWealth()+mother.getIncome()+brother.getIncome()+sister.getIncome()+father.getIncome()+wealthA);
+        family.setFamilyInfluence(family.getFamilyInfluence()+influenceA);
+        if(family.getFamilyFriends()>countries.getRequiredFriends()||family.getFamilyWealth()>countries.getRequireedWealth()
+                && family.getFamilyInfluence()>countries.getRequiredInfluence()){
+            family.setNeighborhood(countries.getRichNeighborHood());
+            human.setNeighborhood(countries.getRichNeighborHood());
+
+
+        }else if(family.getFamilyFriends()==countries.getRequiredFriends()||family.getFamilyWealth()==countries.getRequireedWealth()
+                && family.getFamilyInfluence()==countries.getRequiredInfluence()){
+            family.setNeighborhood(countries.getMiddleNeighborHood());
+            human.setNeighborhood(countries.getMiddleNeighborHood());
+
+        }else{
+            family.setNeighborhood(countries.getPoorNeighborHood());
+            human.setNeighborhood(countries.getPoorNeighborHood());
+        }
     }
 
     public void selectingAWish(int numberSelection){
