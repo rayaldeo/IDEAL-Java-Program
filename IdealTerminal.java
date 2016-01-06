@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class IdealTerminal implements Runnable {
 
     private Human human;
-    private Jobs job=Jobs.NOJOB;
+    private Jobs job;
     private NameGenerator name,nameOfChar;
     //private Neighborhood neighborhood;
     private int age, schoolAttendanceAmount,socialisingWithFriends,workingOnPhysicalApp;
@@ -546,6 +546,7 @@ public class IdealTerminal implements Runnable {
             e.printStackTrace();
         }
         human = new Human(nameOfChar.getWholeName(), Jobs.NOJOB,family,countries);
+        job=Jobs.NOJOB;
 
 
     }
@@ -721,19 +722,23 @@ public class IdealTerminal implements Runnable {
                             if (value < 0 || value > 7 /*|| Integer.valueOf(value)*/) {
                                 ///I must undo any changes if the user doesn't comply with my instructions
                                 //looks=0,worshippers=0,friends=0,professionAssocites=0,influence=0,wealth=0;
-                                human.setJob(temjobA);
+                                job=temjobA;
+
                                 worshippers = 0;
                                 wealth = 0;
                                 friends = 0;
                                 looks = 0;
                                 professionAssocites = 0;
                                 influence = 0;
+                                updatingStateOfHuman(job,looks,worshippers,friends,professionAssocites,influence);
                                 System.out.println("You did not place in a proper command,upsetting the Genie.You lose all three of your wishes");
                                 chancesOfLife();
 
                             }
                             selectingAWish(value);
+
                             }
+                            updatingStateOfHuman(job,looks,worshippers,friends,professionAssocites,influence);
 
 
                     }else{
@@ -1245,7 +1250,7 @@ public class IdealTerminal implements Runnable {
     }
 
     public void updatingStateOfHuman(Jobs job,int looksA,int worshippersA,
-                                     int friendsA,int professionalAssociatesA,int influenceA){
+                                     int friendsA,int professionalAssociatesA,int influenceA) {
         human.setJob(job);
         human.setIncome(job.getIncome());
         human.setOverAllwealth((human.getWealthDoubleValue()+job.getIncome()));
@@ -1306,7 +1311,7 @@ public class IdealTerminal implements Runnable {
                 wealth=100000;
                 break;
             case 7:
-               System.out.println("Choose a job of your liking,get the job, and permanently unlock it for later in life!");
+               System.out.println("Choose a job of your liking,get the job, and permanently unlock it for life!");
                 System.out.println("Very Low Paying Jobs:(0)Begger (1)Vagrant" + ("\n") +
                         "Low Paying Jobs that add greater Influence: (2)Intern"  + ("\n") +
                         "Average Paying Jobs with low Influence: (3)Packingboy (4)Firefighter (5) Banker" + ("\n") +
@@ -1370,16 +1375,21 @@ public class IdealTerminal implements Runnable {
                     break;
 
                     }
-                System.out.print("\n You are now a "+human.getJob().getName()+("\n"));
+                System.out.print("\nYou are now a(n) "+job.getName()+("\n"));
+                updatingStateOfHuman(job,0,0,0,0,0);
                 CharDetails();
+                System.out.println("\n");
 
                 break;
             case 0:
                 //Become Omega
 
-                System.out.println("You are now an Omega");
                 omega=true;
                 job =Jobs.OMEGA;
+                System.out.print("\nYou are now an "+job.getName()+("\n"));
+                updatingStateOfHuman(job,0,0,0,0,0);
+                CharDetails();
+                System.out.println("\n");
 
 
 
