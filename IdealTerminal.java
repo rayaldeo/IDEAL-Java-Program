@@ -393,7 +393,7 @@ public class IdealTerminal implements Runnable {
         System.out.println("INITIAL STATE");
         System.out.println("|"+family.getFamilyWealth()+"|"+"|"+countries.getName()+"||"+countries.getTaxes());
         System.out.println("\n"+"/--------------------------------------------------------------------------------------/");
-            age=18;
+            age=1;
         do {
 
                 System.out.println("\n" + "/--------------------------------------------------------------------------------------/");
@@ -583,7 +583,7 @@ public class IdealTerminal implements Runnable {
 
             System.out.println("\n");
             ///If you want to test any specific chance of life just place in the case number into switch bracket..the program will only run that switch
-            switch (7) {
+            switch (randomNum) {
 
                 case 0:
                     //Move to another country with higher or lower income
