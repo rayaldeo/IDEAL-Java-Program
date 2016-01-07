@@ -204,7 +204,7 @@ public class IdealTerminal implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
+        human=new Human();
         return nameOfChar;
 
     }
@@ -274,13 +274,13 @@ public class IdealTerminal implements Runnable {
                     }
                     if (human.getInfluence() < 100000||!heavenBoolean) {
                         System.out.println("You do not have enough power to access this place");
-                    } else
-                        heavenBoolean=true;
+                        System.out.println("Choose a different country");
+                        SelectACountry();
+                    } else {
+                        heavenBoolean = true;
                         this.countries = Countries.Heaven;
+                    }
 
-                }else {
-                    System.out.println("Choose a different country");
-                    SelectACountry();
                 }
                 break;
 

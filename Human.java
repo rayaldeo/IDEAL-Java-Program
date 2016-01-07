@@ -22,6 +22,19 @@ public class Human {
     Create an average Human in the poorest neighborhood,average looks, and zero wealth or friends
     User needs to specify skin color
      */
+    //Empty Constructor
+    public Human(){
+         looks=0;
+         worshippers=0;
+        familyWealth= 0;
+        influence=0;
+        income = 0;
+        overAllWealth=0;
+        influence=0;
+        friends=0;
+        professionAssociates=0;
+
+    }
 
     //This contructor can be used after the game is beaten specifically for the player
     public Human(/*String colorA,boolean sexA*/String nameA,Jobs jobA, Family familyA,Countries countriesA){
