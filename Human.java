@@ -32,7 +32,7 @@ public class Human {
         looks=5;
         neighborhood= countriesA.getPoorNeighborHood();
         worshippers=0;
-        familyWealth= familyA.getFamilyWealthDouble();
+        familyWealth= familyA.getFamilyWealth();
         influence=familyA.getFamilyInfluence();
         income = jobA.getIncome();
         overAllWealth=jobA.getIncome()+ initialWealth;
@@ -97,7 +97,7 @@ public class Human {
 
     public  Countries getCountry(){return country;}
 
-    public double getWealthDoubleValue(){return overAllWealth;}
+
 
 
     //Setters

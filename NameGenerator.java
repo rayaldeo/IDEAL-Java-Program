@@ -78,7 +78,7 @@ public class NameGenerator {
 //Main Method
    public static void main(String[] args) {
 
-        NameGenerator nameGenerator = new NameGenerator(true);
+        NameGenerator nameGenerator = new NameGenerator(false);
        System.out.println(nameGenerator.getFirstName());
        System.out.println(nameGenerator.getLastName());
 

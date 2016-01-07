@@ -33,7 +33,7 @@ public class Family {
         family.add(sisterA);
         family.add(brotherA);
         //brotherA.getWealthDoubleValue returns a double date set of the brother's wealth
-        this.familyWealth=(brotherA.getWealthDoubleValue() + sisterA.getWealthDoubleValue() + motherA.getWealthDoubleValue() + fatherA.getWealthDoubleValue());
+        this.familyWealth=(brotherA.getOverAllWealth() + sisterA.getOverAllWealth() + motherA.getOverAllWealth() + fatherA.getOverAllWealth());
         this.familyInfluence=(brotherA.getInfluence() + sisterA.getInfluence() + motherA.getInfluence() + fatherA.getInfluence());
         this.familyWorshippers =(brotherA.getWorshippers()+motherA.getWorshippers()+fatherA.getWorshippers()+sisterA.getWorshippers());
         this.familyFriends =(brotherA.getFriends()+motherA.getFriends()+fatherA.getFriends()+sisterA.getFriends());
@@ -45,10 +45,6 @@ public class Family {
     ///Getters
     //Getters
     public double getFamilyWealth() {
-        return familyWealth;
-    }
-
-    public double getFamilyWealthDouble(){
         return familyWealth;
     }
 
