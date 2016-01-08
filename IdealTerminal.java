@@ -130,10 +130,10 @@ public class IdealTerminal implements Runnable {
     public void Init(){
 
 
-        System.out.println("Welcome!This game is suppose to represent capitalism and some of the issues associated with it." +
+        System.out.println("Welcome!The purpose of this Java Program is to create your fantasy ideal life.." +
                 ("\n")+"Create a character at the bottom of society." +
                 ("\n")+"Progress this character through the world and accumulate influence, wealth, and associates." +
-                ("\n")+"Don't hold back, this is Capitalism after all,accumulating everything the world has the offer is the key of winning the game"+
+                ("\n")+"Don't hold back,accumulating everything the world has the offer is the key of winning the game"+
                 ("\n")+"Good Luck!");
 
 
@@ -483,7 +483,7 @@ public class IdealTerminal implements Runnable {
     public void GrownUpHuman(){
         System.out.println("\n"+"/--------------------------------------------------------------------------------------/");
         System.out.println("You are now an adult and will have to work on your own now to secure you IDEAL Life"+"\n"
-                +"If you can reach $10,000,000 in wealth and 100,000 in influence in 25 turns; you would have won the game!!"
+                +"If you can reach $10,000,000 in wealth and 20,00,000 in influence;you would have won the game!!"
                 +"\n There are also many other features to unlock in the game"
                 +"\n Create your IDEAL Life");
         try {
@@ -517,7 +517,7 @@ public class IdealTerminal implements Runnable {
             //Once the player reaches 100000 worshippers, the player will become a god
             //it only needs to be activated once and the benefit should automatically apply without the player being notified again
             //Permanent benefit once it is activated
-            if(worshippersActivation==true) {//this will play once the upgrade is activated
+            if(worshippersActivation) {//this will play once the upgrade is activated
                 job = Jobs.GOD;
                 this.worshippersFollow(worshippersActivation);
                 heavenBoolean=true;
@@ -1706,14 +1706,6 @@ public class IdealTerminal implements Runnable {
 
         }
 
-    }
-
-    public String getFirstName(){
-        return name.getFirstName();
-    }
-
-    public String getLastNamePart(){
-        return name.getLastName();
     }
 
     public boolean isObjectInteger(Object o){
