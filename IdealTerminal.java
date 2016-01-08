@@ -438,7 +438,7 @@ public class IdealTerminal implements Runnable {
         System.out.println("INITIAL STATE");
         System.out.println("|"+family.getFamilyWealth()+"|"+"|"+countries.getName()+"||"+countries.getTaxes());
         System.out.println("\n"+"/--------------------------------------------------------------------------------------/");
-            age=18;
+            age=1;
         do {
 
                 System.out.println("\n" + "/--------------------------------------------------------------------------------------/");
