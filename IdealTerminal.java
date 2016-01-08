@@ -483,7 +483,7 @@ public class IdealTerminal implements Runnable {
     public void GrownUpHuman(){
         System.out.println("\n"+"/--------------------------------------------------------------------------------------/");
         System.out.println("You are now an adult and will have to work on your own now to secure you IDEAL Life"+"\n"
-                +"If you can reach $10,000,000 in wealth and 20,00,000 in influence;you would have won the game!!"
+                +"If you can reach $10,000,000 in wealth and 2,000,000 in influence;you would have won the game!!"
                 +"\n There are also many other features to unlock in the game"
                 +"\n Create your IDEAL Life");
         try {
